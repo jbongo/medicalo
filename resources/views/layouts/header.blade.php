@@ -23,6 +23,8 @@
     <link href="{{ asset('css/lib/sweetalert/sweetalert.css')}}" rel="stylesheet">
     <link href="{{ asset('css/lib/data-table/data-table.css')}}" rel="stylesheet">
     <link href="{{ asset('css/lib/select2/select2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lib/calendar/fullcalendar.css') }}" rel="stylesheet">
+
     <link rel="stylesheet" href="{{asset('css/lib/bootstrap-select.min.css')}}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">

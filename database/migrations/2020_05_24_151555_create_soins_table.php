@@ -15,6 +15,10 @@ class CreateSoinsTable extends Migration
     {
         Schema::create('soins', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('tarif')->nullable();
+            $table->string('nom')->nullable();
+            $table->text('description')->nullable();
+
             $table->timestamps();
         });
     }

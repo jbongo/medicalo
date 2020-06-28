@@ -75,20 +75,14 @@
 
          
                 <li class=""><a href="{{route('dossier.index')}}" ><i class="large material-icons" style="font-size:20px;">folder_open</i> Dossiers Médicaux </a></li>
-                <li class=""><a href="" ><i class="large material-icons" style="font-size:20px;">folder_open</i> RDV </a></li>
-                <li class=""><a href="" ><i class="large material-icons" style="font-size:20px;">folder_open</i> Abonnements </a></li>
+                <li class=""><a href="{{ route('rdv.index') }}" ><i class="large material-icons" style="font-size:20px;">folder_open</i> RDV </a></li>
                 <li class=""><a href="" ><i class="large material-icons" style="font-size:20px;">folder_open</i> Médécins </a></li>
                 <li class=""><a href="" ><i class="large material-icons" style="font-size:20px;">folder_open</i> Factures </a></li>
 
                 
                     @if (Auth()->user()->role == "admin")
                     
-                <li class="{{$li_parametre}}"><a  class="sidebar-sub-toggle"><i class="large material-icons" style="font-size:20px;">build</i> Configurations <span class="sidebar-collapse-icon ti-angle-down"></span></a>
-                        <ul>
-                            {{-- <li><a href="page-login.html">Info Entreprise</a></li> --}}
-                            <li class="{{$li_parametre_generaux}}"><a href="">Généraux</a></li>
-                           
-                        </ul>
+                <li class="{{$li_parametre}}"><a  href="{{ route('configuration.index') }}" class=""><i class="large material-icons" style="font-size:20px;">build</i> Configurations </a>
                     </li>
                     @endif
                     <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();

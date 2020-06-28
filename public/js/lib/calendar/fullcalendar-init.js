@@ -65,15 +65,13 @@
             var form = $("<form></form>");
             form.append("<div class='row'></div>");
             form.find(".row")
-                .append("<div class='col-md-6'><div class='form-group'><label class='control-label'>Event Name</label><input class='form-control' placeholder='Insert Event Name' type='text' name='title'/></div></div>")
-                .append("<div class='col-md-6'><div class='form-group'><label class='control-label'>Category</label><select class='form-control' name='category'></select></div></div>")
+                .append("<div class='col-md-6'><div class='form-group'><label class='control-label'>Info</label><input class='form-control' placeholder='Modif info' type='text' name='title'/></div></div>")
+                .append("<div class='col-md-6'><div class='form-group'><label class='control-label'>Patient</label><select class='form-control' name='category'></select></div></div>")
                 .find("select[name='category']")
-                .append("<option value='bg-danger'>Danger</option>")
-                .append("<option value='bg-success'>Success</option>")
-                .append("<option value='bg-dark'>Dark</option>")
-                .append("<option value='bg-primary'>Primary</option>")
-                .append("<option value='bg-pink'>Pink</option>")
-                .append("<option value='bg-info'>Info</option>")
+                .append("<option value='bg-danger'>Mr Konan</option>")
+                .append("<option value='bg-success'>Mr Marc</option>")
+                .append("<option value='bg-dark'>Mme Louise</option>")
+
                 .append("<option value='bg-warning'>Warning</option></div></div>");
             $this.$modal.find('.delete-event').hide().end().find('.save-event').show().end().find('.modal-body').empty().prepend(form).end().find('.save-event').unbind('click').on("click", function () {
                 form.submit();
@@ -131,16 +129,16 @@
         var today = new Date($.now());
 
         var defaultEvents =  [{
-                title: 'Hey!',
+                title: 'Rdv Mr Konan Mme Lucie',
                 start: new Date($.now() + 158000000),
                 className: 'bg-dark'
             }, {
-                title: 'See John Deo',
+                title: 'Rdv Mr Konan',
                 start: today,
                 end: today,
                 className: 'bg-danger'
             }, {
-                title: 'Buy a Theme',
+                title: 'Rdv Mr Marc',
                 start: new Date($.now() + 338000000),
                 className: 'bg-primary'
             }];
@@ -191,3 +189,4 @@ function($) {
     "use strict";
     $.CalendarApp.init()
 }(window.jQuery);
+

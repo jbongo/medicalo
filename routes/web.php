@@ -43,5 +43,27 @@ Route::middleware('auth')->group(function(){
         Route::post('/dossier/update/{dossier}','DossierController@update')->name('dossier.update');
         Route::delete('/dossier/delete/{dossier}','DossierController@destroy')->name('dossier.delete');
         Route::post('/dossier/archive/{dossier}','DossierController@archive')->name('dossier.archive');
+
+    // Configurations
+
+    Route::get('/configuration','ConfigurationController@index')->name('configuration.index');
+
+    //  PRISE DE RDV
+    Route::get('/rdv','RdvController@index')->name('rdv.index');
+
+    // SECTEUR
+    Route::post('/secteur/store','SecteurController@store')->name('secteur.store');
+    Route::get('/secteur/show/{secteur_id}','SecteurController@show')->name('secteur.show');
+    Route::get('/secteur/edit/{secteur_id}','SecteurController@edit')->name('secteur.edit');
+    Route::post('/secteur/update/{secteur_id}','SecteurController@update')->name('secteur.update');
+    Route::delete('/secteur/delete/{secteur_id}','SecteurController@delete')->name('secteur.delete');
+
+    // PATHOLOGIE
+    Route::post('/pathologie/store','PathologieController@store')->name('pathologie.store');
+    Route::get('/pathologie/show/{pathologie_id}','PathologieController@show')->name('pathologie.show');
+    Route::get('/pathologie/edit/{pathologie_id}','PathologieController@edit')->name('pathologie.edit');
+    Route::post('/pathologie/update/{pathologie_id}','PathologieController@update')->name('pathologie.update');
+    Route::delete('/pathologie/delete/{pathologie_id}','PathologieController@delete')->name('pathologie.delete');
+
 });
 

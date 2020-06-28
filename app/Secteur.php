@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Secteur extends Model
 {
     //
+    protected $guarded=[];
+
 }

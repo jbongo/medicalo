@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Pathologie extends Model
 {
     //
+    protected $guarded=[];
+
 }

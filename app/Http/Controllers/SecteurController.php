@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
-use Illuminate\Support\Facades\Crypt;
 
 use Illuminate\Http\Request;
 
-class UtilisateurController extends Controller
+use App\Secteur ; 
+
+
+
+class SecteurController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +17,7 @@ class UtilisateurController extends Controller
      */
     public function index()
     {
-        $utilisateurs = User::whereIn('role',['responsable','infirmiere','admin'])->orderBy('nom')->get();
-        $admins = User::whereIn('role',['admin'])->orderBy('nom')->get();
-        return view ('utilisateurs.index',compact('utilisateurs','admins'));
+        //
     }
 
     /**
@@ -27,7 +27,7 @@ class UtilisateurController extends Controller
      */
     public function create()
     {
-        return view("utilisateurs.add");
+        //
     }
 
     /**
@@ -38,29 +38,18 @@ class UtilisateurController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        
+
         $request->validate([
-            'email' => 'required|unique:users|max:255',
-            
+            'nom' => 'required|unique:secteurs|max:255',
+        ]);
+        Secteur::create([
+            "nom"=>$request->nom,
+            "ville"=>$request->ville,
         ]);
 
-        User::create([
-            "secteur_id"=>$request->secteur,
-            "nom"=>$request->nom,
-            "prenom"=>$request->prenom,
-            "civilite"=>$request->civilite,
-            "adresse"=>$request->adresse,
-            "ville"=>$request->ville,
-            "telephone1"=>$request->telephone1,
-            "telephone2"=>$request->telephone2,
-            "statut"=>$request->statut,
-            "email"=>$request->email,
-            "role"=>$request->role,
-        ]);
-       
+        return redirect()->route('configuration.index')->with('ok','Nouveau secteur ajouté');
+        
       
-        return redirect()->route('utilisateur.index')->with('ok','Nouvel utilisateur ajouté');
     }
 
     /**
@@ -69,17 +58,9 @@ class UtilisateurController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($utilisateur_id)
+    public function show($id)
     {
-        $id = Crypt::decrypt($utilisateur_id);
-        $utilisateur = User::where('id', $id)->firstOrFail();
-        
-
-        // statistiques
-
- 
-        return view('utilisateurs.show', compact(['utilisateur']));
-
+        //
     }
 
     /**
@@ -88,11 +69,9 @@ class UtilisateurController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($utilisateur_id)
+    public function edit($id)
     {
-        $id = Crypt::decrypt($utilisateur_id);
-        $utilisateur = User::where('id', $id)->firstOrFail();
-        return view('utilisateurs.edit', compact(['utilisateur']));
+        //
     }
 
     /**

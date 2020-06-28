@@ -98,7 +98,7 @@
 
         }); 
         // mandataire
-        var table = $('#example3').DataTable({
+        var table = $('#example2').DataTable({
             paging: false,
             "order": [],
             
@@ -175,11 +175,14 @@ $(document).ready(function() {
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/stacktable.js"></script>
 <!--calendar-->
 <script src="{{ asset('js/lib/jquery-ui/jquery-ui.min.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/locale/fr.js"></script>
+<script src="{{ asset('js/lib/calendar/fullcalendar.min.js') }}"></script>
+<script src="{{ asset('js/lib/calendar/fullcalendar-init.js') }}"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/locale/fr.js"></script> --}}
 <!--calendar end-->
 <!--tokenfield-->
 {{-- <script src="{{ asset('js/lib/tokenfield/bootstrap-tokenfield.min.js') }}"></script> --}}
+
     @yield('js-content')
 </body>
 

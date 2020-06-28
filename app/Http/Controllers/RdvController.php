@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Pathologie ;
 
-class PathologieController extends Controller
+class RdvController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class PathologieController extends Controller
      */
     public function index()
     {
-        //
+        return view('rdv.index');
     }
 
     /**
@@ -35,16 +34,7 @@ class PathologieController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $request->validate([
-            'nom' => 'required|unique:secteurs|max:255',
-        ]);
-        Pathologie::create([
-            "nom"=>$request->nom,
-            "description"=>$request->description,
-        ]);
-
-        return redirect()->route('configuration.index')->with('ok','Nouvelle pathologie ajoutée');
+        //
     }
 
     /**

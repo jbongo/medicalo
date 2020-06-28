@@ -22,7 +22,7 @@
                                 <div class="panel-body">
 
                         <div class="table-responsive" >
-                            <table id="example" class="display responsive nowrap" style="width:100%">
+                            <table id="example" class="display  nowrap" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>@lang('Nom')</th>

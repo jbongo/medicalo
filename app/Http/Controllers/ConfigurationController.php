@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Secteur;
+use App\Pathologie;
 
 class ConfigurationController extends Controller
 {
@@ -13,7 +15,10 @@ class ConfigurationController extends Controller
      */
     public function index()
     {
-        //
+        $secteurs = Secteur::all() ;
+        $pathologies = Pathologie::all() ;
+        
+        return view("configurations.index",compact(['secteurs','pathologies']));
     }
 
     /**

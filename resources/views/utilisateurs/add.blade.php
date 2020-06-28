@@ -31,7 +31,7 @@ Ajout d'un utilisateur
                             <div class="col-lg-8 col-md-8 col-sm-8">
                                <select class="js-select2 form-control {{$errors->has('role') ? 'is-invalid' : ''}}" id="role" name="role" style="width: 100%;"required>
                                   <option value="{{old('role')}}">{{old('role')}}</option>
-                                  <option value="infirmier">infirmier</option>
+                                  <option value="infirmière">infirmier</option>
                                   <option value="responsable">responsable</option>
                                   <option value="admin">administrateur</option>
                                </select>
@@ -125,8 +125,12 @@ Ajout d'un utilisateur
                          <div class="form-group row">
                             <label class="col-lg-4 col-md-4 col-sm-4 control-label" for="secteur">Secteur</label>
                             <div class="col-lg-8 col-md-8 col-sm-8">
-                               <input type="text" class="form-control {{ $errors->has('secteur') ? ' is-invalid' : '' }}" value="{{old('secteur')}}" id="secteur" name="secteur" placeholder="Ex: Marcory" >
-                               @if ($errors->has('secteur'))
+                              <select class="js-select2 form-control {{$errors->has('secteur') ? 'is-invalid' : ''}}" id="secteur" name="secteur" style="width: 100%;"required>
+                                 <option value="4">Marcory</option>
+                                 <option value="1">Koumassi</option>
+                                 <option value="2">Cocody</option>
+                                 <option value="3">Treichville</option>
+                              </select>                               @if ($errors->has('secteur'))
                                <br>
                                <div class="alert alert-warning ">
                                   <strong>{{$errors->first('secteur')}}</strong> 
