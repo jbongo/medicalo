@@ -17,7 +17,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -70,6 +75,54 @@
             </div>
         </nav>
 
+
+
+        <main>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-6 login-section-wrapper">
+                  <div class="brand-wrapper">
+                    <img src="{{ asset('images/logo.svg') }}" alt="logo" class="logo">
+                  </div>
+                  <div class="login-wrapper my-auto">
+                    <h1 class="login-title">Connexion</h1>
+                    <form method="POST" action="{{ route('login') }}">
+
+                        @csrf
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        {{-- <input type="email" name="email" id="email" class="form-control" placeholder="email@example.com"> --}}
+                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+
+                      </div>
+                      <div class="form-group mb-4">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="**********">
+                      </div>
+                      {{-- <input name="login" id="login" class="btn btn-block login-btn" type="button" value="Se connecter"> --}}
+                      <button type="submit" class="btn btn-block login-btn">
+                        {{ __('Se connecter') }}
+                    </button>
+
+                    <a href="#!" class="forgot-password-link">Mot de passe oublié?</a>
+                    {{-- <p class="login-wrapper-footer-text">Don't have an account? <a href="#!" class="text-reset">Register here</a></p> --}}
+                  </div>
+                </div>
+                <div class="col-sm-6 px-0 d-none d-sm-block">
+                  <img src="{{ asset('images/login2.png') }}" alt="login image" class="login-img">
+                </div>
+
+            </form>
+
+              </div>
+            </div>
+          </main>
+
+
+
+
+
+{{-- 
         <main class="py-4">
         <div class="container">
     <div class="row justify-content-center">
@@ -127,11 +180,11 @@
                                     {{ __('Se connecter') }}
                                 </button>
 
-                                {{-- @if (Route::has('password.request'))
+                                @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
-                                @endif --}}
+                                @endif
                             </div>
                         </div>
                     </form>
@@ -141,7 +194,10 @@
     </div>
 </div>
 
-        </main>
+        </main> --}}
+
+
+
     </div>
 </body>
 </html>

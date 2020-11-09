@@ -40,6 +40,7 @@ class UtilisateurController extends Controller
     {
         //
         
+        dd("rdd");
         $request->validate([
             'email' => 'required|unique:users|max:255',
             
