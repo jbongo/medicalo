@@ -80,7 +80,7 @@
         <main>
             <div class="container-fluid">
               <div class="row">
-                <div class="col-sm-6 login-section-wrapper">
+                <div class="col-lg-6 col-md-6 col-sm-6  login-section-wrapper">
                   <div class="brand-wrapper">
                     <img src="{{ asset('images/logo.svg') }}" alt="logo" class="logo">
                   </div>
@@ -108,7 +108,7 @@
                     {{-- <p class="login-wrapper-footer-text">Don't have an account? <a href="#!" class="text-reset">Register here</a></p> --}}
                   </div>
                 </div>
-                <div class="col-sm-6 px-0 d-none d-sm-block">
+                <div class="col-lg-6 col-md-6 col-sm-6  px-0 d-none d-sm-block">
                   <img src="{{ asset('images/login2.png') }}" alt="login image" class="login-img">
                 </div>
 
